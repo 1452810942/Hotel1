@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>会员注册</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="ThemeDesign" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <link rel="shortcut icon" href="page/assets/images/faviicon.png">
+
+        <link href="page/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="page/assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="page/assets/css/style.css" rel="stylesheet" type="text/css">
+    </head>
+
+
+    <body>
+
+        <!-- Loader -->
+        <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+
+        <!-- Begin page -->
+        
+
+            <!-- ========== Left Sidebar Start ========== -->
+            
+                    <div class="page-content-wrapper ">
+
+                        <div class="container" >
+
+                            <div class="row">
+                                <div class="col-lg-6 mx-auto">
+                                    <div class="card"style="height:800px">
+                                        <div class="card-body">
+
+                                            <h4 class="mt-0 header-title">会员注册</h4>
+                                            <form class="cmxform" id="signupForm" method="get" action="">
+                                                <fieldset>
+                                                    <p>
+                                                    <label for="username">姓名</label>
+                                                    <input id="username" name="username" style="width: 300px" class="form-control"type="text"/>
+                                                    </p>
+                                                    <p>
+                                                    <label for="gender">性别</label>    
+                                                    男：<input  type="radio" id="gender_male" value="男" name="gender"required/>
+                                                    女：<input  type="radio" id="gender_female" value="女" name="gender"/>
+                                                </p>
+                                                <p>
+                                                  <label for="password">密码</label>
+                                                  <input id="password" name="password" style="width: 300px"class="form-control" type="password">
+                                                </p>
+                                                <p>
+                                                  <label for="confirm_password">验证密码</label>
+                                                  <input id="confirm_password" name="confirm_password"  style="width: 300px"class="form-control"type="password">
+                                                </p>
+                                                <p>
+                                                    <label for="idCard">身份证</label>
+                                                    <input id="idCard" name="idCard" style="width: 300px" class="form-control" type="text">
+                                                </p>
+                                                <p>
+                                                    <label for="phone">电话</label>
+                                                    <input id="phone" name="phone" style="width: 300px" class="form-control" type="text">
+                                                </p>
+                                                
+                                            
+                                                <p>
+                                                  <input class="submit" type="submit" class="btn btn-info" value="提交">
+                                                </p>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                        </div><!-- container -->
+                    </div> <!-- Page content Wrapper -->
+                </div> <!-- content -->
+            </div>
+            <!-- End Right content here -->
+        <!-- jQuery  -->
+        <script src="page/assets/js/jquery.min.js"></script>
+        <script src="page/assets/js/bootstrap.min.js"></script>
+        <script src="page/assets/js/jquery.slimscroll.js"></script>
+        <script src="page/assets/plugins/validate/jquery.validate.min.js"></script>
+
+         <!-- App js -->
+         <script src="page/assets/js/app.js"></script>
+         <script>
+            $.validator.setDefaults({
+                submitHandler: function() {
+                    var name = $("#username").val();
+                    var password = $("#password").val();
+                    var idCard = $("#idCard").val();
+                    var sex = $("input[type='radio']:checked").val();
+                    var phone = $("#phone").val();
+                    $.ajax({
+                        url:"../AddVip",
+                        dataType:"JSON",
+                        data:{name:name,sex:sex,password:password,idCard:idCard,tel:phone},
+                        type:"POST",
+                        success:function(res){
+                            if(!res.type){
+                                alert("该账号已被注册");
+                                window.location = "会员注册.html";
+                                return;
+                            }
+                            alert("注册成功！！！");
+                            window.location = "index.html"
+                        }
+                    })
+                }
+               
+            });
+            $(document).ready(function() {
+            // 在键盘按下并释放及提交后验证提交表单
+            $.validator.addMethod("idCard", function (value, element) {
+                var isIDCard1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;//(15位)
+                var isIDCard2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;//(18位)
+                return this.optional(element) || (isIDCard1.test(value)) || (isIDCard2.test(value));
+            }, "格式不对"),
+            jQuery.validator.addMethod("isPhone", function(value,element) {   
+                var length = value.length;   
+                var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/;   
+                var tel = /^\d{3,4}-?\d{7,9}$/;   
+                return this.optional(element) || (tel.test(value) || mobile.test(value));}, "请正确填写您的联系电话") ,     
+            $.validator.addMethod("chinese", function (value, element) {
+                var chinese = /^[\u4E00-\u9FFF]+$/;
+                return this.optional(element) || (chinese.test(value));
+            }, "格式不对");  
+            $("#signupForm").validate({
+                rules: {
+                  firstname: "required",
+                  lastname: "required",
+                  username: {
+                    required: true,
+                    minlength: 2,
+                    chinese:true
+                  },
+                  password: {
+                    required: true,
+                    minlength: 5
+                  },
+                  confirm_password: {
+                    required: true,
+                    minlength: 5,
+                    equalTo: "#password"
+                  },
+                  idCard: {
+                    required: true,
+                    idCard: true
+                  },
+                  phone: {
+                    required: true,
+                    isPhone:true
+                  },
+                  "topic[]": {
+                    required: "#newsletter:checked",
+                    minlength: 2
+                  },
+                  agree: "required"
+                },
+                messages: {
+                  firstname: "请输入您的名字",
+                  lastname: "请输入您的姓氏",
+                  username: {
+                    required: "请输入真实姓名",
+                    minlength: "请输入真实姓名"
+                  },
+                  password: {
+                    required: "请输入密码",
+                    minlength: "密码长度不能小于 5 个字母"
+                  },
+                  gender:{
+                    required: "请选择性别"
+                  },
+                  confirm_password: {
+                    required: "请输入密码",
+                    minlength: "密码长度不能小于 5 个字母",
+                    equalTo: "两次密码输入不一致"
+                  },
+                  idCard: {
+                    required: "请输入身份证号",
+                    minlength: "长度不能小于 15 个字母",
+                    
+                  },
+                  phone:{
+                    required: "请输入手机号",
+                  },
+                 agree: "请接受我们的声明"
+                 
+                }
+            });
+        });
+        
+        
+        
+
+
+        </script>
+            
+           
+    </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>客房类型</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="ThemeDesign" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="Thu, 01 Jan 1970 00:00:01 GMT" />
+	<meta http-equiv="expires" content="0" />
+    <link rel="shortcut icon" href="assets/images/faviicon.png">
+
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="fixed-left">
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+              </div>
+        </div>
+    </div>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+                <i class="ion-close"></i>
+            </button>
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <!--<a href="index.html" class="logo">Admiry</a>-->
+                    <a href="#" class="logo"><img src="assets/images/logo.png" height="55" alt="logo"></a>
+                </div>
+            </div>
+
+            <div class="sidebar-inner slimscrollleft">
+
+                <div class="user-details">
+                    <div class="text-center">
+                        <img src="assets/images/users/avatar-6.jpg" alt="" class="rounded-circle">
+                    </div>
+                    <div class="user-info">
+                            <h4 class="font-16 text-white">管理员</h4>
+                            <span class="text-white"><i class="fa fa-dot-circle-o text-success"></i>在线</span>
+                    </div>
+                </div>
+
+            <div id="sidebar-menu">
+                <ul>
+                        <li class="menu-title text-white"></li>
+
+                        <li>
+                            <a href="admin1.html" class="waves-effect">
+                                <i class="ti-home"></i>
+                                <span> 首页统计 </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin1-预约.html" class="waves-effect"><i class="ti-light-bulb"></i> <span> 预约管理 </span> </a>
+                        </li>
+
+                        <li>
+                            <a href="admin1-入住.html" class="waves-effect"><i class="ti-crown"></i> <span> 入住管理 </span></a>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-layout"></i> <span> 人员管理 </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="admin1-会员.html">会员管理</a></li>
+                                <li><a href="admin1-员工.html">员工管理</a></li>
+            
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> 客房管理 </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="admin1-客房查询.html">客房查询</a></li>
+                                <li><a href="admin1-客房类型.html">客房类型</a></li>
+                                </ul>
+                        </li>
+
+                    
+                    </ul> 
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- end sidebarinner -->
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- Start right Content here -->
+
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+
+                <!-- Top Bar Start -->
+                <div class="topbar">
+
+                    <nav class="navbar-custom">
+
+                        <ul class="list-inline float-right mb-0">
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link  waves-effect" href="admin1-用户反馈.html" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="mdi mdi-email-outline noti-icon"></i>
+                                    
+                                </a>
+                            </li>
+
+                           
+
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/avatar-6.jpg" alt="user" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                    <a class="dropdown-item" href="../../Logout"><i class="mdi mdi-logout m-r-5 text-muted"></i> 退出</a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <ul class="list-inline menu-left mb-0">
+                            <li class="list-inline-item">
+                                <button type="button" class="button-menu-mobile open-left waves-effect">
+                                    <i class="ion-navicon"></i>
+                                </button>
+                            </li>
+                            
+                        </ul>
+
+                        <div class="clearfix"></div>
+
+                    </nav>
+
+                </div>
+                <!-- Top Bar End -->
+
+                <div class="page-content-wrapper ">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4 class="mt-0 header-title">会员表</h4>
+                            </div>
+                            <div class="col-12 m-h-20">
+                                    <div id="alert1"class="alert alert-success text-center" style="display:none">
+                                            <strong >操作成功!</strong> 
+                                    </div>
+                                    <div id="alert2"class="alert alert-danger text-center " style="display:none">
+                                            <strong >操作失败!</strong> 
+                                    </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="table-rep-plugin">
+                                    <div class="table-responsive b-0" data-pattern="priority-columns">
+                                        <table class="table table-bordered table-hover" >
+                                            <thead class="text-center">
+                                                <tr>
+                                                    <th width="20px">编号</th>
+                                                    <th width="40px">客房类型</th>
+                                                    <th width="30px">价格</th>
+                                                    <th width="200px">客房描述</th>
+                                                    <th width="30px">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody"class="text-center table-sm">
+                                                    
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                    </div><!-- container -->
+                    
+                      <div class="modal fade" id="myModal">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                       
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">编辑客房信息</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</NOtton>
+                            </div>
+                       
+                            <!-- 模态框主体 -->
+                            <div class="modal-body">
+                                <form>
+                                    <div  class="form-group">
+                                        <label>编号<span class="mess"></span></label>
+                                    </div>
+                                    <div  class="form-group">
+                                        <label>客房类型</label>
+                                        <div>
+                                            <input  id="type" data-parsley-type="text"type="text" required class="form-control"placeholder="请编辑客房类型"/>
+                                        </div>
+                                    </div>
+                                    <div  class="form-group">
+                                        <label>价格</label>
+                                        <div>
+                                            <input  id="price"data-parsley-type="number"type="text" required class="form-control"placeholder="请编辑价格"/>
+                                        </div>
+                                    </div>
+                                    <div  class="form-group">
+                                        <label>客房描述</label>
+                                        <div>
+                                            <input  id="desc" data-parsley-type="text"type="text" required class="form-control"placeholder="请编辑描述"/>
+                                        </div>
+                                    </div>
+                                 </form>   
+                            </div>
+                            
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button  id="sendMess"type="button" class="btn btn-primary" data-dismiss="modal"onclick="update()">提交</NOtton>
+                              </div>
+                         
+                          </div>
+                        </div>
+                    </div>
+                </div> <!-- Page content Wrapper -->
+           
+            </div>
+            <!-- content -->
+
+            <footer class="footer">
+                ©酒店管理系统,Inc or its affiliates.  <i class="mdi mdi-heart text-danger"></i>All Rights Reserved
+            </footer>
+
+        </div>
+        <!-- End Right content here -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+    <!-- Responsive-table -->
+    <!-- <script src="assets/plugins/RWD-Table-Patterns/dist/js/rwd-table.min.js" type="text/javascript"></script> -->
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+    <!--pagination-->
+    <script src="../js/jquery.twbsPagination.min.js"></script>
+    <!--jsrender-->
+    <script src="../js/jsrender.js"></script>
+    <script id = "comment" type="text/x-jsrender">
+    {{for comments}}
+    <tr height="20px" data-id="{{:rid}}">
+        <td>{{:rid}}</td>
+        <td>{{:rtype}}</td>
+        <td>{{:rprice}}</td>
+        <td>{{:rdesc}}</td>
+        <td class="text-center">
+            <div class="btn btn-info btn-sm btn-refuse" data-toggle="modal" data-target="#myModal">编辑</div>
+        </td>    
+    </tr>
+    {{/for}}
+    </script>
+    <script>
+    function load(){
+        $("#tbody").fadeOut("fast");
+        $("html").attr("class","prograss-wait");
+        $.getJSON("../../GetRoom",{},function(res){
+     	   console.log(res)
+         var data = {};
+         data.comments = res;
+         var html = $('#comment').render(data);
+         $("#tbody").html(html).fadeIn("fast");
+         $("html").removeAttr("class","prograss-wait");
+        })
+    }
+    load();
+    $("#tbody").on("click",".btn-info",function(){
+        var $tr = $(this).parent().parent();
+        var data = $tr.data("id");
+        $.getJSON("../../GetRoomByID",{"rid":data},function(res){
+            $(".mess").eq(0).text(res.rid);
+            $("#type").val(res.rtype);
+            $("#price").val(res.rprice);
+            $("#desc").val(res.rdesc);
+        })
+    })
+    function message(b){
+         var b = b;
+         !!b == true ? $("#alert1").fadeIn().delay(2500).fadeOut() : $("#alert2").fadeIn().delay(2500).fadeOut();
+     }
+    function update(){
+        var mess0 = $(".mess").eq(0).text(),
+            mess1 = $("#type").val(),
+            mess2 = $("#price").val(),
+            mess3 = $("#desc").val();
+        $.getJSON("../../UpdateRoom",{"rid":mess0,"rtype":mess1,"rprice":mess2,"rdesc":mess3},function(res){
+            if(res){
+                message(res);
+            }
+            load()
+        })
+    }
+    </script>
+</body>
+
+</html>

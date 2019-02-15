@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="Thu, 01 Jan 1970 00:00:01 GMT" />
+	<meta http-equiv="expires" content="0" />
+    <title>修改密码</title>
+    <link rel="shortcut icon" href="assets/images/faviicon.png">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+        <div class="page-content-wrapper ">
+               
+                <div class="container">
+                        
+                    <div class="card m-b-30 col-7">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4 class="mt-0 header-title">修改密码</h4>
+                                </div>
+                               
+                                
+                                <div class="col-7">
+                                <form class="" action="#" novalidate="">        
+                                    <div class="form-group">
+                                        <label for="usr">原始密码:</label>
+                                        <input type="text" class="form-control" id="usr">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pwd">修改密码:</label>
+                                        <input type="password" class="form-control" id="pwd">
+                                      </div>
+                                    <div class="form-group">
+                                        <div>
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" onclick="send()"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                                提交
+                                            </font></font></button>
+                                        </div>
+                                    </div>
+                                    </form>     
+                                </div> <!-- end col -->
+                            </div> <!-- end row -->
+                        </div>
+                    </div>    
+                </div><!-- container -->
+                
+            </div> <!-- Page content Wrapper -->
+        
+             <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+    <script>
+        var b;
+         function viewName(){
+            $.getJSON("../../GetNowVipName",{},function(res){   
+                b = res.vid;
+
+            })
+        }
+        viewName();
+    
+        function send(){
+            var mess1 = $("#usr").val(),mess2 = $("#pwd").val();
+            $.getJSON("../../UpdatePasswordOfVip",{"oldPassword":mess1,"newPassword":mess2,"vid":b},function(res){   
+                if(!res.type){
+                    alert("操作失败");
+                    return
+                }
+                alert("操作成功");
+                window.location = "../../Logout"
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>入住管理</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="ThemeDesign" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="Thu, 01 Jan 1970 00:00:01 GMT" />
+	<meta http-equiv="expires" content="0" />
+    <link rel="shortcut icon" href="assets/images/faviicon.png">
+
+    <!-- Table css -->
+    <link href="assets/plugins/RWD-Table-Patterns/dist/css/rwd-table.min.css" rel="stylesheet" type="text/css" media="screen">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="fixed-left">
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+              </div>
+        </div>
+    </div>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+                <i class="ion-close"></i>
+            </button>
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <!--<a href="index.html" class="logo">Admiry</a>-->
+                    <a href="index.html" class="logo"><img src="assets/images/logo.png" height="55" alt="logo"></a>
+                </div>
+            </div>
+
+            <div class="sidebar-inner slimscrollleft">
+
+                <div class="user-details">
+                    <div class="text-center">
+                        <img src="assets/images/users/avatar-6.jpg" alt="" class="rounded-circle">
+                    </div>
+                    <div class="user-info">
+                            <h4 class="font-16 text-white">管理员</h4>
+                            <span class="text-white"><i class="fa fa-dot-circle-o text-success"></i>在线</span>
+                    </div>
+                </div>
+
+            <div id="sidebar-menu">
+                <ul>
+                    <li class="menu-title text-white"></li>
+                    <li>
+                        <a href="admin1.html" class="waves-effect">
+                            <i class="ti-home"></i>
+                            <span> 首页统计 </span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="admin1-预约.html" class="waves-effect"><i class="ti-light-bulb"></i> <span> 预约管理 </span> </a>
+                    </li>
+                    <li>
+                        <a href="admin1-入住.html" class="waves-effect"><i class="ti-crown"></i> <span> 入住管理 </span></a>
+                    </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-layout"></i> <span> 人员管理 </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="admin1-会员.html">会员管理</a></li>
+                            <li><a href="admin1-员工.html">员工管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> 客房管理 </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="admin1-客房查询.html">客房查询</a></li>
+                            <li><a href="admin1-客房类型.html">客房类型</a></li>
+                        </ul>
+                    </li>
+                </ul> 
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- end sidebarinner -->
+    </div>
+    <!-- Left Sidebar End -->
+
+        <!-- Start right Content here -->
+
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+
+                <!-- Top Bar Start -->
+                <div class="topbar">
+
+                    <nav class="navbar-custom">
+
+                        <ul class="list-inline float-right mb-0">
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link  waves-effect" href="admin1-用户反馈.html" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="mdi mdi-email-outline noti-icon"></i>
+                                    
+                                </a>
+                            </li>
+
+                        
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/avatar-6.jpg" alt="user" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                    
+                                    <a class="dropdown-item" href="../../Logout"><i class="mdi mdi-logout m-r-5 text-muted"></i> 退出</a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <ul class="list-inline menu-left mb-0">
+                            <li class="list-inline-item">
+                                <button type="button" class="button-menu-mobile open-left waves-effect">
+                                    <i class="ion-navicon"></i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="clearfix"></div>
+
+                    </nav>
+
+                </div>
+                <!-- Top Bar End -->
+
+                <div class="page-content-wrapper ">
+                    <div class="container-fluid">
+                        <div class="card m-b-30">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4 class="mt-0 header-title">入住管理表</h4>
+                                    </div>
+                                    <div class="col-12 m-h-20">
+                                            <div id="alert1"class="alert alert-success text-center" style="display:none">
+                                                    <strong >操作成功!</strong> 
+                                            </div>
+                                            <div id="alert2"class="alert alert-danger text-center " style="display:none">
+                                                    <strong >操作失败!</strong> 
+                                            </div>
+                                        </div>
+                                    <div class="col-12" >
+                                            <form class="form-inline m-h-60">
+                                                    <select class="form-control" id="sel1">
+                                                            <option>房号</option>
+                                                            <option>房间信息</option>
+                                                            <option>会员编号</option>
+                                                            <option>会员姓名</option>
+                                                            <option>电话</option>
+                                                            <option>入住时间</option>
+                                                            <option>退房时间</option>
+                                                            <option>状态</option>
+                                                    </select>&nbsp;
+                                                    <input id="messages" class="form-control" type="text" placeholder="请输入关键字">
+                                                    <button id="search" class="btn btn-success m-l-10" type="button">查询</button>
+                                            </form>
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="javascript:void(0);" id="cancel" class="btn btn-primary btn-sm pull-left m-r-10" >取消查询</a>
+                                        <a href="javascript:void(0);" class="btn btn-info btn-sm" id="btn-info" data-toggle="modal" data-target="#myModal">添加</a> 
+                                        <a href="javascript:void(0);" class="btn btn-danger btn-sm" id="btn-deletes" style="display:none">删除</a>            
+                                        <ul class="pagination pagination-sm pull-right">
+                                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="table-rep-plugin">
+                                            <div class="table-responsive b-0" data-pattern="priority-columns">
+                                                <table class="table table-bordered table-hover" >
+                                                    <thead class="text-center">
+                                                        <tr>
+                                                            <th width="4px" class="text-center"><input type="checkbox" id="check1"></input></th>
+                                                            <th width="8px">#</th>
+                                                            <th width="30px">房号</th>
+                                                            <th width="50px">房间信息</th>
+                                                            <th width="20px">会员编号</th>
+                                                            <th width="20px">会员姓名</th>
+                                                            <th width="40px">电话</th>
+                                                            <th width="20px">入住时间</th>
+                                                            <th width="20px">退房时间</th>
+                                                            <th width="40px">状态</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tbody"class="text-center table-sm">
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end col -->
+                                </div> <!-- end row -->
+                            </div>
+                        </div>    
+                    </div><!-- container -->
+                    <div class="modal fade" id="myModal">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                       
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">添加入住信息</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                       
+                            <!-- 模态框主体 -->
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label>姓名</label>
+                                        <input  id="name"type="text" class="form-control"required placeholder="请输入名字"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>身份证</label>
+                                        <div>
+                                            <input id="idCard"data-parsley-type="number" type="text" required class="form-control"placeholder="请输入身份证号"/>
+                                        </div>
+                                    </div>
+                                    <div  class="form-group">
+                                        <label>房间号</label>
+                                        <div>
+                                            <input id="room"type="number" type="text" required class="form-control"placeholder="请选择房间号"/>
+                                        </div>
+                                    </div>
+                                    
+                                 </form>   
+                            </div>
+                            
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                              <button  id="sendMess"type="button" class="btn btn-primary" data-dismiss="modal"onclick="update()">提交</button>
+                            </div>
+                       
+                          </div>
+                        </div>
+                      </div>
+                      
+                </div> <!-- Page content Wrapper -->
+            </div>
+            <!-- content -->
+
+            <footer class="footer">
+                ©酒店管理系统,Inc or its affiliates.  <i class="mdi mdi-heart text-danger"></i>All Rights Reserved
+            </footer>
+
+        </div>
+        <!-- End Right content here -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+    <!-- Responsive-table -->
+    <!-- <script src="assets/plugins/RWD-Table-Patterns/dist/js/rwd-table.min.js" type="text/javascript"></script> -->
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+    <!--pagination-->
+    <script src="../js/jquery.twbsPagination.min.js"></script>
+    <!--jsrender-->
+    <script src="../js/jsrender.js"></script>
+    <script id = "comment" type="text/x-jsrender">
+    {{for comments}}
+    <tr height="20px"{{if ldesc == "换房"}} class="warning" {{else ldesc == "退房"}} class="danger" {{/if}} data-id="{{:nid}}">
+        <td><input type="checkbox" class="check" data-foo="{{:lid}}"></input></td>
+        <td>{{:#index+1}}</td>
+        <td>{{:rid}}</td>
+        <td>{{:rtype}} {{:rprice}}</td>
+        <td>{{:vid}}</td>
+        <td>{{:vname}}</td>
+        <td>{{:vtel}}</td>
+        <td>{{:ndate1}}</td>
+        <td>{{:ndate2}}</td> 
+        <td>{{:ldesc}}</td>
+    </tr>
+    {{/for}}
+    </script>
+    <script>
+    var a = 1;
+    // 显示分页效果及渲染页面
+    function loadPagination(address,page){
+        $("tbody").fadeOut("fast"); 
+        $("html").attr("class","prograss-wait");
+        $.getJSON(address,{page:page},function(res){
+        	console.log(res);
+            if(page > res.totalPage){
+                loadPagination("../../GetLiveroom",res.totalPage);
+                return false;
+            }
+            $(".pagination").twbsPagination("destroy");
+            $(".pagination").twbsPagination({
+                first:"首页",
+                last:"尾页",
+                prev:"上一页",
+                next:"下一页",
+                startPage:page,
+                totalPages:res.totalPage,
+                visiblePages:3,
+                initiateStartPageClick:false,
+                onPageClick:function(e,page){
+                    loadPagination("../../GetLiveroom",page);
+                }
+            })
+
+            var data={};
+            data.comments = res.productList;
+            var html = $('#comment').render(data);
+            $("#tbody").html(html).fadeIn("fast");
+            $("html").removeAttr("class","prograss-wait");
+            a = page;
+        })
+    } 
+    function loadSearchPagination(page){
+    	var mess = $("#messages").val();
+        $("tbody").fadeOut("fast"); 
+        $("html").attr("class","prograss-wait");
+        $.ajax({
+        	url:"../../SelectLiveroom",
+        	type:"GET",
+        	dataType:"JSON",
+        	data:{"page":page,"message":mess},
+        	success:function(res){ 
+            	if(page > res.totalPage){
+                	loadSearchPagination(res.totalPage);
+                	return false;
+            	}
+            	$(".pagination").twbsPagination("destroy");
+            	$(".pagination").twbsPagination({
+                	first:"首页",
+                	last:"尾页",
+                	prev:"上一页",
+                	next:"下一页",
+                	startPage:page,
+                	totalPages:res.totalPage,
+                	visiblePages:3,
+                	initiateStartPageClick:false,
+                	onPageClick:function(e,page){
+                    	loadSearchPagination(page);
+                	}
+            	})
+
+            	var data={};
+            	data.comments = res.productList;
+            	var html = $('#comment').render(data);
+           
+            	$("#tbody").html(html).fadeIn("fast");
+            	$("html").removeAttr("class","prograss-wait");
+            	a = page;
+        	}
+        })
+    } 
+    function update(){
+        var name = $("#name").val();
+        var idCard = $("#idCard").val();
+        var room = $("#room").val();
+        $.ajax({
+            url:"../../AddLiveroom",
+            data:{name:name,idCard:idCard,room:room},
+            dataType:"JSON",
+            success:function(res){	
+          
+            	console.log(res)
+                if(!res.type){
+                    message(res.type);
+                    return;
+                }
+                loadPagination("../../GetLiveroom",1);
+                message(res.type);
+            }
+        })
+    }
+    // 封装接受拒绝操作
+    function operation(){
+        var $tr = $(this).parent().parent();
+        var id = $tr.attr("data-id");
+        var status = $(this).attr("data-btn");
+        $.getJSON("../../DeleteResveration",{id:id,ntype:status},function(res){
+            if(!res) return;
+            loadPagination("../../GetReservation",a);
+        })
+    }
+    // 第一次加载页面是调用
+    loadPagination("../../GetLiveroom",a);
+    //提示框弹出操作
+    function message(b){
+        var b = b;
+        !!b == true ? $("#alert1").fadeIn().delay(2500).fadeOut() : $("#alert2").fadeIn().delay(2500).fadeOut();
+    }
+    // 批量删除操作
+    var $selectCheck = [];
+    // 全选按钮删除操作
+    $("#check1").on("click",function(){
+        $(".check").prop("checked",$(this).prop("checked"));
+        if($(this).prop("checked")){
+            $selectCheck = [];
+            $(".check").each(function(){
+                var foo = $(this).data("foo");
+                $selectCheck.push(foo);
+                $("#btn-deletes").fadeIn();                 
+            })
+        }else{
+            $selectCheck = [];
+            $("#btn-deletes").fadeOut();
+        }
+    })
+   
+    // 表格多选框选择操作
+    $("#tbody").on("change",".check",function(){
+        var length = $(".check").length;
+        var checkedLength = $(".check:checked").length;
+        if(length == checkedLength){
+            $("#check1").prop("checked",true);
+        }else{
+            $("#check1").prop("checked",false);
+        }
+        var n = false;
+        var foo = $(this).data("foo");
+        $(".check").each(function(){
+            if($(this).prop("checked")){
+                n = true;
+            }
+        })
+        if($(this).prop("checked")){
+            $selectCheck.push(foo);
+        }else{
+            $selectCheck.splice($selectCheck.indexOf(foo),1);
+        }
+        console.log(n)
+        n ? $("#btn-deletes").fadeIn():$("#btn-deletes").fadeOut();
+    })
+    //查询功能
+    $("#search").on("click",function(){
+        var mess = $("#messages").val();
+        $.ajax({url:"../../SelectLiveroom",
+        	dataType:"JSON",
+        	data:{message:mess,page:1},
+        	type:"GET",
+        	success:function(res){
+        		console.log(res)
+        		if(res.type){
+        			message(res.type);
+        			loadSearchPagination(1)
+        		}
+        		else{
+        			return
+        		}
+        		
+        	}
+        });
+    })
+    // 批量删除按钮点击操作
+    $("#btn-deletes").on("click",function(){
+        
+        $.ajax({url:"../../DeleteReservation",
+        	data:{"id":$selectCheck},
+        	traditional:true,
+        	type:"POST",
+        	success:function(res){
+            	if(!res.type) {
+                    message(res.type);
+                    return
+                };
+                var re = res.isSearch;
+                !re == true ? loadSearchPagination(a) : loadPagination("../../GetReservation",a);
+            	if($("#check1").prop("checked")){
+            		$("#check1").prop("checked",false);
+            	}
+                $("#btn-deletes").fadeOut();
+                message(res);
+        	}
+        });
+        
+    })
+    
+    // 取消查询操作
+    $("#cancel").on("click",function(){
+        loadPagination("../../GetLiveroom",1);
+        $("#messages").val("");
+    })
+    </script>
+</body>
+
+</html>

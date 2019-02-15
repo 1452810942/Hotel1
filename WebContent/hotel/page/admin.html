@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>首页统计</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="ThemeDesign" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="Thu, 01 Jan 1970 00:00:01 GMT" />
+	<meta http-equiv="expires" content="0" />
+    <link rel="shortcut icon" href="assets/images/faviicon.png">
+
+    <!--Morris Chart CSS -->
+    <!-- <link rel="stylesheet" href="assets/plugins/morris/morris.css"> -->
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="fixed-left">
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+              </div>
+        </div>
+    </div>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+                <i class="ion-close"></i>
+            </button>
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <!--<a href="index.html" class="logo">Admiry</a>-->
+                    <a href="#" class="logo"><img src="assets/images/logo.png" height="55" alt="logo"></a>
+                </div>
+            </div>
+
+            <div class="sidebar-inner slimscrollleft">
+
+                <div class="user-details">
+                    <div class="text-center">
+                        <img src="assets/images/users/avatar-7.jpg" alt="" class="rounded-circle">
+                    </div>
+                    <div class="user-info">
+                            <h4 class="font-16 text-white">员工</h4>
+                            <span class="text-white"><i class="fa fa-dot-circle-o text-success"></i>在线</span>
+                    </div>
+                </div>
+
+            <div id="sidebar-menu">
+                <ul>
+                        <li class="menu-title text-white"></li>
+
+                        <li>
+                            <a href="admin.html" class="waves-effect">
+                                <i class="ti-home"></i>
+                                <span> 首页统计 </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-预约.html" class="waves-effect"><i class="ti-light-bulb"></i> <span> 预约管理 </span> </a>
+                        </li>
+
+                        <li>
+                            <a href="admin-入住.html" class="waves-effect"><i class="ti-crown"></i> <span> 入住管理 </span></a>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-layout"></i> <span> 人员管理 </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="admin-会员.html">会员管理</a></li>
+                                <li><a href="admin-员工.html">员工管理</a></li>
+            
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="ti-pencil-alt"></i><span> 客房管理 </span> <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="admin-客房查询.html">客房查询</a></li>
+                                
+                                </ul>
+                        </li>
+
+                    
+                    </ul> 
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- end sidebarinner -->
+        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- Start right Content here -->
+
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+
+                <!-- Top Bar Start -->
+                <div class="topbar">
+
+                    <nav class="navbar-custom">
+
+                        <ul class="list-inline float-right mb-0">
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect" href="admin-用户反馈.html" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="mdi mdi-email-outline noti-icon"></i>
+                                </a>
+                             
+                            </li>
+
+                           
+
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/avatar-7.jpg" alt="user" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                    
+                                    <a class="dropdown-item" href="../../Logout"><i class="mdi mdi-logout m-r-5 text-muted"></i> 退出</a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <ul class="list-inline menu-left mb-0">
+                            <li class="list-inline-item">
+                                <button type="button" class="button-menu-mobile open-left waves-effect">
+                                    <i class="ion-navicon"></i>
+                                </button>
+                            </li>
+                            
+                        </ul>
+
+                        <div class="clearfix"></div>
+
+                    </nav>
+
+                </div>
+                <!-- Top Bar End -->
+                <div class="page-content-wrapper ">
+                        <div class="container-fluid">
+                                <div class="row">
+                                        <div class="col-md-6 col-xl-3">
+                                            <div class="mini-stat clearfix bg-white">
+                                                <span class="mini-stat-icon"><i class="ti-home"></i></span>
+                                                <div class="mini-stat-info text-right text-light" >
+                                                    <span class="counter text-white tbody"></span> 房间     
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-md-6 col-xl-3">
+                                            <div class="mini-stat clearfix bg-success">
+                                                <span class="mini-stat-icon"><i class="ti-user"></i></span>
+                                                <div class="mini-stat-info text-right text-light">
+                                                    <span class="counter text-white tbody"></span> 员工人数  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xl-3">
+                                            <div class="mini-stat clearfix bg-orange">
+                                            <span class="mini-stat-icon"><i class="ti-user"></i></span>
+                                                <div class="mini-stat-info text-right text-light">
+                                                    <span class="counter text-white tbody"></span> 会员人数   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-xl-3">
+                                            <div class="mini-stat clearfix bg-info">
+                                                <span class="mini-stat-icon"><i class="ti-stats-up"></i></span>
+                                                <div class="mini-stat-info text-right text-light">
+                                                    <span class="counter text-white tbody"></span> 收入   
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+                         
+                            <div class="card m-b-30">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h4 class="mt-0 header-title">财务表</h4>
+                                        </div>
+                                      
+                                        <div class="col-8">
+                                            <div class="table-rep-plugin">
+                                                <div class="table-responsive b-0" data-pattern="priority-columns">
+                                                    <table class="table table-bordered table-hover" >
+                                                        <thead class="text-center">
+                                                            <tr>
+                                                                <th width="20px">账单编号</th>
+                                                                <th width="30px">入住编号</th>
+                                                                <th width="30px">支付款</th>
+                                                               
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="tbody"class="text-center table-sm">
+                                                                
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div> <!-- end col -->
+                                    </div> <!-- end row -->
+                                </div>
+                            </div>    
+                        </div><!-- container -->
+                    </div> <!-- Page content Wrapper -->
+                
+                   
+
+            </div>
+            <!-- content -->
+
+            <footer class="footer">
+                    ©酒店管理系统,Inc or its affiliates.  <i class="mdi mdi-heart text-danger"></i>All Rights Reserved
+            </footer>
+
+        </div>
+        <!-- End Right content here -->
+
+    </div>
+    <!-- END wrapper -->
+
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+    
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+     <!--jsrender-->
+     <script src="../js/jsrender.js"></script>
+     <script id = "comment" type="text/x-jsrender">
+     {{for comments}}
+     <tr height="20px">
+         <td>{{:fid}}</td>
+         <td>{{:lid}}</td>
+         <td>{{:famount}}</td>
+     </tr>
+     {{/for}}
+     </script>
+
+    
+    <script>
+        function load() {
+            $("#tbody").fadeOut("fast");
+           $("html").attr("class","prograss-wait");
+            $.getJSON("../../RetuenCount",{},function(res){
+        	    
+        	    $(".tbody").eq(1).text(res.Staff);
+        	    $(".tbody").eq(2).text(res.Vip);
+        	    $(".tbody").eq(0).text(res.Room);
+        	    $(".tbody").eq(3).text(res.Finance);
+            });
+            $.getJSON("../../GetFinace",{},function(res){
+        	    
+        	   var data={};
+            	data.comments = res;
+            	var html = $('#comment').render(data);
+           
+            	$("#tbody").html(html).fadeIn("fast");
+            	$("html").removeAttr("class","prograss-wait");
+            
+            });
+        }
+        load()
+    </script>
+</body>
+
+</html>

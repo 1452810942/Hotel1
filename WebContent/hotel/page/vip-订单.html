@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="Thu, 01 Jan 1970 00:00:01 GMT" />
+	<meta http-equiv="expires" content="0" />
+    <title>订单管理</title>
+    <link rel="shortcut icon" href="assets/images/faviicon.png">
+
+    <!-- Table css -->
+    <link href="assets/plugins/RWD-Table-Patterns/dist/css/rwd-table.min.css" rel="stylesheet" type="text/css" media="screen">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="page-content-wrapper ">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <!-- Brand/logo -->
+                <a class="navbar-brand " href="javascript:void(0)">酒店预订</a>
+                
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link font-16" href="vip.html">客房预订</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-16" href="vip-订单.html">订单管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-16" href="vip-入住.html">入住记录</a>
+                    </li>
+                    <li class="nav-item m-t-10" style="padding-left:780px">
+                        <a  class="name font-14"href="javascript:void(0)"><span class="mess2"></span></a>
+                        <a  class="name font-14"href="vip-修改密码.html">&nbsp;&nbsp;[修改密码]</a>
+                        <a  class="name font-14"href="../../Logout">[退出]</a>
+                    </li>
+                </ul>
+              </nav>
+        <div class="container">
+                
+            <div class="card m-b-30">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="mt-0 header-title">订单表</h4>
+                        </div>
+                        
+                        
+                        <div class="col-6">
+                            <ul id="body">
+                                 
+                                    
+                            </ul>
+                        </div> 
+                        <div class="col-6">
+                            <form class="form" action="#" novalidate="" style="display: none">        
+                                <div class="form-group">
+                                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">反馈信息</font></font></label>
+                                    <div>
+                                        <textarea  id="textarea" required="" class="form-control" rows="7" value=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div>
+                                        <button type="submit" class="btn btn-primary waves-effect waves-light" onclick="send()"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                                            提交
+                                        </font></font></button>
+                                    </div>
+                                </div>
+                                </form>     
+                            </div> <!-- end col -->
+                    </div> <!-- end row -->
+                </div>
+            </div>    
+        </div><!-- container -->
+        
+    </div> <!-- Page content Wrapper -->
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/fastclick.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <script src="assets/js/jquery.blockUI.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.nicescroll.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+    <!--Morris Chart-->
+    <!-- <script src="assets/plugins/morris/morris.min.js"></script>
+    <script src="assets/plugins/raphael/raphael-min.js"></script>
+
+    <script src="assets/pages/dashborad.js"></script> -->
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+    <!--jsrender-->
+    <script src="../js/jsrender.js"></script>
+    <script id = "comment" type="text/x-jsrender">
+    {{for comments}}
+    <li data-id1="{{:lid}}" data-id2="{{:rid}}"style="margin-bottom:30px"><div class="card bg-light text-dark">
+            <div class="card-header">下单时间:{{:infoemation.ntime}}&nbsp;&nbsp;入住时段:{{:infoemation.ndate1}}——{{:infoemation.ndate2}}</div>
+              <div class="card-body">
+                 <p>客房编号:{{:rid}} &nbsp;&nbsp;客房类型:{{:infoemation.rtype}} </p>
+                 <p>支付:{{:price}} &nbsp;&nbsp;订单状态:{{:message}}</p>
+                 {{if message == "已退房"}}
+                     <p><a class="btn btn-info">评价</a></p>
+                  {{/if}}
+                </div> 
+           </div>
+     </li>
+    {{/for}}
+    </script>
+    <script>  
+    var b,a,c;
+     function viewName(){
+    	$("#body").fadeOut("fast");
+        $.getJSON("../../GetNowVipName",{},function(res){
+        	console.log(res)
+            $(".mess2").text(res.vname);
+            b = res.vid;
+            getMess();
+        })
+    } 
+    function getMess(){
+
+        $.getJSON("../../GetReservationByVid",{"vid":b},function(res){
+        	
+        		
+                var data={};
+                data.comments = res;
+                var html = $("#comment").render(data);
+                $("#body").html(html).fadeIn("fast");
+                
+                
+        })
+    }
+    viewName()
+    $("#body").on("click",".btn-info",function(){
+        var $li = $(this).parent().parent().parent().parent();
+        a = $li.data("id1"),
+        c = $li.data("id2");
+        $(".form").show();
+        $("#textarea").focus();
+    })
+    function send(){
+            var text = $("#textarea").val();
+                
+            $.getJSON("../../AddSuggest",{"vid":b,"rid":c,"lid":a,"sudesc":text},function(res){   
+                if(!res.type){
+                    alert("评价失败");
+                    return
+                }
+                alert("评价成功");
+                $(".form").hide();
+                viewName()
+            })
+        }
+    </script>
+</body>
+</html>

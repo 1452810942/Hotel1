@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="Thu, 01 Jan 1970 00:00:01 GMT" />
+	<meta http-equiv="expires" content="0" />
+    <link rel="shortcut icon" href="assets/images/faviicon.png">
+    <title>会员</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/global.css"/>
+    <link rel="stylesheet" href="assets/css/smoothness/jquery.ui.css"/>
+    <link rel="stylesheet" href="assets/css/css.css"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="ticketBody">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <!-- Brand/logo -->
+                <a class="navbar-brand " href="javascript:void(0)">酒店预订</a>
+                
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link font-16" href="vip.html">客房预订</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-16" href="vip-订单.html">订单管理</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-16" href="vip-入住.html">入住记录</a>
+                    </li>
+                    <li class="nav-item m-t-10" style="padding-left:780px">
+                        <a  class="name font-14"href="javascript:void(0)"><span class="mess2"></span></a>
+                        <a  class="name font-14"href="vip-修改密码.html">&nbsp;&nbsp;[修改密码]</a>
+                        <a  class="name font-14"href="../../Logout">[退出]</a>
+                    </li>
+                </ul>
+              </nav>
+    <div class="container-fluid">
+            <div id="radio"></div>
+            <div class="webIndex" >
+                    <div class="stay-list clearFloat">
+                        <div class="stay-list-left">
+                            
+                            <h3 class="search-title">客房预订</h3>
+                            <form>
+                                <div class="sea-div">
+                                    <label class="search-lab">客房类型</label>
+                                    <div id="radio">
+                                            &nbsp;&nbsp;&nbsp;<input  type="radio"name="radio"id="radio1" value="标准房" >标准房&nbsp;&nbsp;
+                                           <input  type="radio"name="radio"id="radio2" value="大床房" > 大床房&nbsp;&nbsp;
+                                            <input  type="radio" name="radio"id="radio3"value="情侣房">情侣房&nbsp;&nbsp;
+                                           <input  type="radio"name="radio"id="radio4" value=高级套房 > 高级套房&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                           <input  type="radio" name="radio"id="radio5" value=总统套房 style='margin-left:94px'> 总统套房
+                                    </div>
+                                </div>
+                                <div class="sea-div">
+                                    <label class="search-lab">入住日期</label><input type="text"   id="startDate"/>
+                                </div>
+                                <div class="sea-div">
+                                    <label class="search-lab">退房日期</label><input type="text"  id="endDate"/>
+                                </div>
+                                
+                            </form>
+                            <input type="button"  class="search-but" value="提 交"/>
+                        </div>
+                        <div class="stay-list-right">
+                            <ul id="body">
+                          
+                           </ul>
+                        </div>
+                    </div>
+                    
+        </div>
+        
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.ui.js"></script>
+    <script src="assets/js/moment.min.js"></script>
+    <script src="assets/js/hotel/hotel.search.js"></script>
+    <script src="assets/js/stay.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <!--jsrender-->
+    <script src="../js/jsrender.js"></script>
+    <script id = "comment" type="text/x-jsrender">
+    {{for comments}}
+    <li data-id={{:rid}}  style="width: 600px;height: 100px" class="lcss ">
+        
+            <h4 class="font-20">{{:rid}}</h4>
+            <p class="font-16"><label class="font-16">价格：</label>{{:rprice}}</p> 
+            <p class="font-16"><label class="font-16">客房描述：</label>{{:rdesc}}</p>      
+        
+    </li>
+    {{/for}}
+    </script>
+    <script>
+        var a = "",b="";
+        
+        $(".stay-list-right").fadeOut("fast");
+        function viewName(){
+            $.getJSON("../../GetNowVipName",{},function(res){
+                $(".mess2").text(res.vname);
+                b = res.vid;
+            })
+        }
+        viewName();
+        function ajax(id){
+            
+            $.getJSON("../../GetRoomTypeCount",{"type":id},function(res){
+                var data={};
+                data.comments = res;
+                var html = $("#comment").render(data);
+                $("#body").html(html);
+                $(".stay-list-right").fadeIn();
+            })
+        }
+        var startDate = $("#startDate").val(),
+            endDate = $("#endDate").val();
+            $("#radio1").click(function(){
+            	$(".stay-list-right").fadeIn();
+                var val = $(this).val();
+                ajax(val);
+               
+
+            })
+            $("#radio2").click(function(){
+            	$(".stay-list-right").fadeIn();
+                var val = $(this).val();
+                ajax(val);
+                
+            })
+            $("#radio3").click(function(){
+            	$(".stay-list-right").fadeIn();
+                var val = $(this).val();
+                ajax(val);
+            })
+            $("#radio4").click(function(){
+            	$(".stay-list-right").fadeIn();
+                var val = $(this).val();
+                ajax(val);
+            })
+            $("#radio5").click(function(){
+            	$(".stay-list-right").fadeIn();
+                var val = $(this).val();
+                ajax(val);
+            })
+            $(".search-but").click(function(){
+                var mess1 = $("#startDate").val(),
+                    mess2 = $("#endDate").val(),
+                    mess3 = a,
+                    mess3 = b;
+                    $.getJSON("../../VipOrder",{"rid":a,"vid":b,"ndate1":mess1,"ndate2":mess2},function(res){
+                    	console.log(res)
+                        if(!res.type){
+                            alert("提交失败，请检查信息");
+                            return
+                        }
+                        $(".stay-list-right").fadeOut();
+                        alert("预约成功");
+                    })
+            })
+            $("#body").on("click",".lcss",function(){
+                a = $(this).data("id");
+                $(this).addClass("info").siblings().removeClass("info");
+            })
+            
+    </script>
+</body>
+</html>

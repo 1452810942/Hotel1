@@ -1,0 +1,129 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+	<meta http-equiv="expires" content="Thu, 01 Jan 1970 00:00:01 GMT" />
+	<meta http-equiv="expires" content="0" />
+    <title>酒店管理系统</title>
+    <link rel="shortcut icon" href="page/assets/images/faviicon.png">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+</head>
+<body>
+    <!-- 登录界面内容 -->
+    <div class="wrapper">
+        <div class="banner">
+            <!-- 导航栏 -->
+            <div class="banner-content">
+                <div class="banner-top">
+                        <span class="icon1"></span>
+                        <i class="font">酒店管理系统</i>
+                        <ul class="banner-nav">
+                            <li ><div class = "icon2"></div>手机版</li>
+                            <li><div class = "icon3"></div><a target="_blank" href="常见问题解决.ppt">常见问题</a></li>
+                        </ul>
+                        <!-- 隐藏的二维码栏 -->
+                        <div class="hide1">手机版暂无</div>
+                </div>
+            </div>
+            <!-- 轮播图 -->
+            <div class="slide">
+               <div class="img img1 show"></div>
+               <div class="img img2"></div>
+               <div class="img img3"></div>
+            </div>
+            <!-- 轮播图导航小点点 -->
+            <div class="spot">
+                <div>
+                    <span class="spot-color"></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- 登录界面区 -->
+            <div class="login">
+                <span class="login-content">登录管理系统</span>
+                <div class="login-input ">
+                    <input type="text" class="text text1 " placeholder="用户名" value="">
+                    <input type="password" class="text text2" placeholder="密码" value="">
+                    <span class="message"></span>        
+                    <div class="select">
+                        <select name="usertype">
+                            <option value="1">会员</option>
+                            <option value="2">管理员</option>
+                            <option value="3">员工</option>
+                        </select>
+                    </div>
+                    <div class="reg"><a href="会员注册.html">会员注册</a></div>
+                    <input type="button" id="btn" value="登录">
+                </div>
+            </div>
+            <hr class="divder">
+            <div class="container">
+                <div class="row" id="nav-bottom">
+                    <div class="col-md-3 col-md-push-2">
+                        <span class="label label-primary">公告</span>
+                        <br>
+                        <p class="pull-left">为了保证各用户在以后长期的使用过程中有更好的体验，本酒店管理系统也将会针对用户的反馈不断的做出提升，我们也欢迎各商户向我们提出各类需求的建议和意见。</p>
+                    </div>
+                    <div class="col-md-3 col-md-push-4">
+                        <span class="label label-warning">联系电话</span>
+                        <br>
+                        <p class="pull-left" id="h3">酒店咨询：400  000  0000</p>
+                    </div>
+                </div>
+                <footer>
+                    <p class="text-center">©酒店管理系统,Inc or its affiliates. All Rights Reserved</p>
+                </footer>
+            </div>
+        </div>    
+    </div>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+ <script>
+    var btn = document.getElementById("btn");  
+    btn.onclick = function(){
+        var username = document.getElementsByClassName("text1")[0].value;
+        var password = document.getElementsByClassName("text2")[0].value;
+        var message = document.getElementsByClassName("message")[0];
+        var usertype = document.getElementsByName("usertype")[0].value;
+        var xhr =new XMLHttpRequest();
+        xhr.open("POST","../Login",true);
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xhr.send('usertype='+usertype+'&username='+username+'&password='+password);
+        xhr.onreadystatechange = function(){
+            if(this.readyState === 4){
+            	if(this.status == 200){
+                var data = JSON.parse(this.responseText); 
+                console.log(data)
+                if(data.flag == true && data.yy == 1){               	
+                	window.location = "page/vip.html";
+                }else if(data.flag == true && data.yy == 2){
+                	window.location = "page/admin1.html";
+                }else if(data.flag == true && data.yy == 3){
+                	window.location = "page/admin.html"; 
+                }
+                if(data.flag == "have"){
+                    message.innerHTML = "用户已登录";
+                	message.style.display = "inline-block"
+                }
+                else if(data.flag == false){
+                    message.innerHTML = "账号或密码错误";
+                	message.style.display = "inline-block"
+                }
+            	}
+            }
+        }
+    }
+
+    </script>
+</body>
+</html>
